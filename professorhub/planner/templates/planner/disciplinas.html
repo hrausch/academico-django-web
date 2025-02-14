@@ -1,0 +1,65 @@
+{% extends 'planner/base.html' %}
+{% block title %}Disciplinas - ProfessorHub{% endblock %}
+{% block content %}
+<div class="py-4">
+    <h2 class="mb-4">Disciplinas</h2>
+    <button class="btn btn-success mb-4" data-bs-toggle="modal" data-bs-target="#addDisciplineModal">
+        <i class="fas fa-plus"></i> Adicionar Disciplina
+    </button>
+    <div class="row" id="disciplineList">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Disciplina 1</h5>
+                    <p class="card-text">Código: D001</p>
+                    <p class="card-text">Calendário: Semanal</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="#" class="btn btn-primary">Acessar</a>
+                        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal para Adicionar Disciplina -->
+    <div class="modal fade" id="addDisciplineModal" tabindex="-1" aria-labelledby="addDisciplineModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addDisciplineModalLabel">Adicionar Disciplina</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Código</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Calendário</label>
+                            <select class="form-control" required>
+                                <option>Semanal</option>
+                                <option>Mensal</option>
+                                <option>Diário</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ementa</label>
+                            <textarea class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Conteúdo Abordado</label>
+                            <textarea class="form-control" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

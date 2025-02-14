@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request,'landing_page/index.html')
 
 
 #view executada quando o formulário de cadastrado é submetido
