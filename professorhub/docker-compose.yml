@@ -1,0 +1,20 @@
+version: "3.9"
+
+# Determina os serviços necessários para o container
+services:
+
+# Cria o ambiente web utilizando o localhost na porta 8000
+# Também informa a pasta onde está o código do app
+# E adiciona a dependência do serviço db
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+  
+# Observação: O Django utiliza nativamente o SQLite
+# como banco de dados. Portanto, após criado o
+# projeto, será necessário alterar o arquivo
+# de configuração de SQLite para Postgres
